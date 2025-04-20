@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Panda My Admin </title>
+    <style>
+      
+      
+      :root {
+        --cor-nav-pp: #23232e;
+        --fonte-principal: 'Arial', sans-serif;
+        --padding-padrao: 16px;
+      }
+
+
+      * { 
+        margin: 0;  
+        padding: 0; 
+        box-sizing: border-box; 
+      }
+      
+
+      body{
+        
+        
+        background: url("https://sempreupdate.com.br/wp-content/uploads/2016/10/download-de-todos-papeis-de-parede-ubuntu-wallpapers.jpg");
+        /*
+        background-image: url('tupera.jpg');
+        */
+        background-size:cover ; /* cobre toda a tela */
+        background-position: center; /* centraliza a imagem */
+        background-repeat:repeat; /* evita repetição */
+        
+      }
+        
+      a{
+        color: #fff; 
+        text-decoration: none; 
+        transition: 0.3s;
+      }
+
+      .LINKNAV { 
+        color: #fff; 
+        text-decoration: none; 
+        transition: 0.3s;
+      }  
+      
+      a:hover { opacity: 0.7;}
+      
+      /* VARIAVEIS  var(--fonte-principal); */
+      /* VARIAVEIS  var(--cor-nav-pp)  ; */
+      
+
+      .Horizontal_Navbar{
+        display: flex; 
+        align-items: center; 
+        justify-content: space-around;  
+        font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif; 
+        background: #23232e; 
+        height: 8vh; 
+      }
+
+
+      /* -------- < Navbar_LEFT > --------  */
+
+      .Navbar_LEFT_BUTTON{
+        left: 0px; /* escondido para a esquerda */
+        width: 20vh;
+        border: none;
+        /* background-color: none; */
+        background-color: transparent; 
+        position: absolute; 
+        font-size: larger;
+        /* text-size-adjust:8vh ; */
+        
+      }
+      
+      .Navbar_LEFT{  
+        display: flex; 
+        left: 0px; /* escondido para a esquerda transform: scaleX(2); */
+        width:  20vh;
+        height: 100vh;
+        background: #23232e;            
+      }
+
+      /* -------- < Navbar_RIGHT > --------  */
+
+
+      .Navbar_RIGHT_BUTTON{
+        right: 0px; /* escondido para a esquerda */
+        width: 20vh;
+        border: none;
+        /* background-color: none; */
+        background-color: transparent; 
+        position: fixed;
+        font-size: larger;
+        /*text-size-adjust:8vh ;*/
+        
+      }
+  
+      .Navbar_RIGHT{
+        position: absolute;
+        right: 0px;
+        width: 20vh;
+        height: 100vh;
+        background: #23232e;  
+      }
+
+      /* right: maxin-width;  transform: translateX(600%); margin: right ;  */
+      /*
+      .Navbar_RIGHT_BUTTON, .Navbar_RIGHT {
+        display: inline-block;
+        align-items: column ;
+        align-content: column;
+      }
+      */
+      /* -------- < DROPDOWN > --------  */
+
+      .Menu-Navbar{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        list-style-type: none;
+
+      }
+
+      .Menu-Navbar a:hover{
+        background-color: #ED6886;
+        color: #23232e;
+        box-shadow: inset 0 0 8px #000;
+        transition: .2s;
+      }
+
+
+      .Menu-Navbar-ASIDE{
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Alinha verticalmente */
+        align-items: center;     /* Alinha horizontalmente */
+        background-color: #23232e;
+        width: 100%;
+        list-style-type: none;
+
+      }
+
+      .Menu-Navbar-ASIDE a:hover{
+        background-color: #ED6886;
+        color: #23232e;
+        box-shadow: inset 0 0 8px #000;
+        transition: .2s;
+      }
+
+
+      .FATHER-DROPDOWN{
+        position: relative;
+
+      }
+
+      .FATHER-DROPDOWN .LIST_DROPDOWN a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Alinha verticalmente */
+        align-items: center;     /* Alinha horizontalmente */
+        background-color: #23232e;
+        width: 100%;
+
+      } 
+      /*
+      .LIST_DROPDOWN {
+        display: none;
+        position: relative;
+        flex-direction: column;
+      }
+      */
+      /* -------- < Navbar_LEFT > --------  */
+
+      .hidden {
+        display: none;
+      }
+
+      body{
+        color: #ff0000;
+      }
+
+      input[type=search] {
+        border-radius: 10px;
+        BACKGROUND-COLOR: rgb(255, 255, 255);
+        height: 5vh;
+      }
+      
+
+      
+        /*
+        @media ( min-width: 901px ) {    
+        }
+        */
+    </style>
+</head>
+<body>
+  
+
+  <header>
+        
+    <!-- Horizontal Navbar -->
+    <nav name="Nav1" class="Horizontal_Navbar" >
+      
+      <!-- Horizontal Navbar -->
+      <a href="" class=""> 🐼 </a>
+      
+      <ul class="Menu-Navbar">
+        <li><a href="" class=""> HOME </a></li>
+        <!-- DROP DOWN list style tipe none  --> 
+        <li class="FATHER-DROPDOWN"> <a href="" class="" onclick="mostrarDropdown()"> USUARIO ▾ </a>
+          <div class="LIST_DROPDOWN" id="HORINZOTAL_LIST_DROPDOWN">
+            <a href="" class="dropdown-content" >bronze</a>
+            <a href="" class="dropdown-content">likk</a>
+            <a href="" class="dropdown-content">ahbhb</a>
+            <a href="" class="dropdown-content">chbhbh</a>
+          </div>
+        </li>
+        <li><a href=""  class=""> FIM </a></li>
+      </ul>
+      
+      <input type="search" placeholder="Buscar..." name="busca" id="campo-busca">
+      <!-- BUTTON_Navbar_LEFT -->
+      <button type="button" style="color: rgb(255, 255, 255);" onclick="toggleNav_LEAFT()" class="Navbar_LEFT_BUTTON" id="toggleBtn"> ⬇️ ☰ </button>  
+      <!-- BUTTON_Navbar_RIGHT -->
+      <button type="button" style="color: rgb(255, 255, 255);" onclick="toggleNav_RIGHT()" class="Navbar_RIGHT_BUTTON" id=""> ⬇️ ☰ </button>
+
+    </nav>
+
+    <!-- LEFT_LIST_DROPDOWN -->
+    <nav name="Nav1" class="Navbar_LEFT" id="Navbar_LEFT" >
+      
+      <ul class="Menu-Navbar-ASIDE">
+        
+        <li><a href="" class=""> HOME </a></li>
+        <!-- DROP DOWN list style tipe none RIGHT_LIST_DROPDOWN  --> 
+        <li class="FATHER-DROPDOWN"> <a href="" class="" onclick="mostrarDropdown()"> USUARIO > </a>
+          <div class="LIST_DROPDOWN" id="LIST_DROPDOWN">
+            <a href="" class="dropdown-content" >bronze</a>
+            <a href="" class="dropdown-content">likk</a>
+            <a href="" class="dropdown-content">ahbhb</a>
+            <a href="" class="dropdown-content">chbhbh</a>
+          </div>
+        </li>
+        <li><a href=""  class=""> FIM </a></li>
+      </ul>
+      
+    </nav>
+      
+
+      <!-- RIGHT_LIST_DROPDOWN -->
+      <nav name="Nav2" class="Navbar_RIGHT" id="Navbar_RIGHT" >
+        🐼 <br>   
+        <a href="" class=""> bombeia péao </a>
+        <ul class="Menu-Navbar-ASIDE">
+          <li><a href="" class=""> HOME </a></li>
+          <!-- DROP DOWN list style tipe none  --> 
+          <li class="FATHER-DROPDOWN"> <a href="" class="" onclick="mostrarDropdown()"> USUARIO > </a>
+            <div class="LIST_DROPDOWN" id="LIST_DROPDOWN">
+              <a href="" class="dropdown-content" >bronze</a>
+              <a href="" class="dropdown-content">likk</a>
+              <a href="" class="dropdown-content">ahbhb</a>
+              <a href="" class="dropdown-content">chbhbh</a>
+            </div>
+          </li>
+          <li><a href=""  class=""> FIM </a></li>
+        </ul>
+
+      </nav>
+            
+  </header>
+
+  <main>
+
+
+  </main>
+    
+    
+
+  <script>
+
+    // <🐼> : EVENTO : DISABLE ALL DROPDOWN  - - - - - - - - - -
+        
+        function DESATIVAR_TODOS_LIST(){
+            var dropdowns = document.querySelectorAll('.LIST_DROPDOWN');
+            dropdowns.forEach(function(div) {
+                var style = getComputedStyle(div);
+                div.style.display = 'none';
+            });
+        };
+
+        DESATIVAR_TODOS_LIST();
+
+    // </🐼>
+    
+    // <🐼> : EVENTO : ATIVAR/DESATIVAR EM CLICK ALGUM DROPDOWN - - - - - - - - - -    
+        let dropdowns = document.querySelectorAll('.FATHER-DROPDOWN');
+        dropdowns.forEach(function(div) {
+            div.addEventListener('click', function(event) {
+                event.preventDefault(); // Evita que o link navegue
+                event.stopPropagation(); // Impede que o evento se propague para o documento
+                let currentDisplay = window.getComputedStyle(div.querySelector('.LIST_DROPDOWN')).display;
+                if (currentDisplay === 'none') {
+                    div.querySelector('.LIST_DROPDOWN').style.display = 'flex';
+                    div.querySelector('.LIST_DROPDOWN').style.position = 'absolute'; // 'absolute' para o dropdown
+                    div.querySelector('.LIST_DROPDOWN').style.top = '1'; // Alinha ao topo do pai
+                    div.querySelector('.LIST_DROPDOWN').style.left = '0'; // Alinha à esquerda do pai
+                    div.querySelector('.LIST_DROPDOWN').style.width = '100%'; // Largura total do pai
+                    div.querySelector('.LIST_DROPDOWN').style.backgroundColor = '#23232e'; // Cor de fundo
+                    // div.querySelector('.LIST_DROPDOWN').style.zIndex = '1000'; // Coloca na frente
+                    div.querySelector('.LIST_DROPDOWN').style.display = 'flex'; // 'flex' permite usar flexDirection
+                    div.querySelector('.LIST_DROPDOWN').style.flexDirection = 'column'; // 'column' para os itens
+                    div.querySelector('.LIST_DROPDOWN').style.justifyContent = 'center'; // Alinha verticalmente
+                    div.querySelector('.LIST_DROPDOWN').style.alignItems = 'center'; // Alinha horizontalmente
+                    div.querySelector('.LIST_DROPDOWN').style.padding = '10px'; // Espaçamento interno
+                    div.querySelector('.LIST_DROPDOWN').style.borderRadius = '5px'; // Bordas arredondadas
+                    div.querySelector('.LIST_DROPDOWN').style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)'; // Sombra
+                    div.querySelector('.LIST_DROPDOWN').style.transition = 'all 0.3s ease'; // Transição suave
+                    div.querySelector('.LIST_DROPDOWN').style.backgroundColor = '#23232e'; // Cor de fundo
+                    console.log("Dropdown exibido");  
+                } else {
+                    div.querySelector('.LIST_DROPDOWN').style.display = 'none';  
+                }
+            });
+        });
+    // </🐼> 
+
+
+
+        // <🐼> : FUNCTION : ACTIVATE/DEACTIVATE NAVS  - - - - - - - - - - 
+      
+            // < LEAFT > - - - - - - -  - 
+            function toggleNav_LEAFT() {
+                const nav = document.getElementById('Navbar_LEFT');
+                nav.classList.toggle('hidden');
+                DESATIVAR_TODOS_LIST();
+            };
+
+            toggleNav_LEAFT();
+
+            // < RIGHT >  - - - - - - -  - 
+            function toggleNav_RIGHT() {
+                const nav = document.getElementById('Navbar_RIGHT');
+                nav.classList.toggle('hidden');
+                DESATIVAR_TODOS_LIST();
+            };
+
+            toggleNav_RIGHT();
+        // </🐼>
+      
+       
+        // <🐼> : EVENTO : CLICK FORA DE ALGUM NAV - - - - - - - - - -
+            document.addEventListener('click', function(event) {
+                
+                const leftNav = document.getElementById('Navbar_LEFT');
+                const leftButton = document.querySelector('.Navbar_LEFT_BUTTON');
+                const isClickInsideLeft = leftNav.contains(event.target) || leftButton.contains(event.target);
+                if (!isClickInsideLeft) { leftNav.classList.add('hidden'); }
+
+                const rightNav = document.getElementById('Navbar_RIGHT');
+                const rightButton = document.querySelector('.Navbar_RIGHT_BUTTON');
+                const isClickInsideRight = rightNav.contains(event.target) || rightButton.contains(event.target);
+                if (!isClickInsideRight) { rightNav.classList.add('hidden'); }
+
+
+            });
+        // </🐼> 
+
+        /*
+                    function centralizarBackground() {
+            const bg = document.getElementById("bg-centralizado");
+            
+            if (!bg) return;
+
+            const larguraJanela = window.innerWidth;
+            const alturaJanela = window.innerHeight;
+
+            const larguraBG = bg.offsetWidth;
+            const alturaBG = bg.offsetHeight;
+
+            // Centraliza o elemento
+            bg.style.position = "fixed";
+            bg.style.left = `${(larguraJanela - larguraBG) / 2}px`;
+            bg.style.top = `${(alturaJanela - alturaBG) / 2}px`;
+            bg.style.zIndex = "-1"; // Fica atrás de tudo
+            }
+        window.addEventListener("resize", centralizarBackground);
+        window.addEventListener("load", centralizarBackground);
+        */
+       /*
+        function centralizarBackground() {
+            const bg = document.getElementById("bg-centralizado");
+            if (!bg) return;
+            const larguraJanela = window.innerWidth;
+            const alturaJanela = window.innerHeight;
+            const larguraBG = bg.offsetWidth;
+            const alturaBG = bg.offsetHeight;
+            // Centraliza o elemento
+            bg.style.position = "fixed";
+            bg.style.left = `${(larguraJanela - larguraBG) / 2}px`;
+            bg.style.top = `${(alturaJanela - alturaBG) / 2}px`;
+            bg.style.zIndex = "-1"; // Fica atrás de tudo
+        }
+        window.addEventListener("resize", centralizarBackground);
+        window.addEventListener("load", centralizarBackground);
+        // <🐼> : FUNCTION : MOSTRAR/DESATIVAR DROPDOWN
+        // </🐼>
+        */
+      
+
+
+  
+
+
+    </script>
+</body>
+</html>
